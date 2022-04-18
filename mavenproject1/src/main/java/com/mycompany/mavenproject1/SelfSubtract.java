@@ -23,6 +23,7 @@ public class SelfSubtract {
     private static int numRowsPerThread;   
     private static int masterArr[] = new int[10000000];
     private static boolean showDetails = false;
+    private static final ArrayList<Long> operationTimes = new ArrayList<>();
     
     
     
@@ -36,23 +37,23 @@ public class SelfSubtract {
     
     public static void main(String[] args) {  
         
-        // Param 1 : Number of Rows
+        // Param 1: Number of Rows
         // Param 2: Number of Threads
         // Param 3: Shows Details for Debugging
         
-        SelfSubtract selfsubtract = new SelfSubtract(10000000,2, true);
+        SelfSubtract selfsubtract = new SelfSubtract(5000000,8, false);
         
+        long avgOperationTime = doWork();
         
-        long myTime = doWork();  
+        System.out.println("\n\nAverage Operation Time for All Threads: " + avgOperationTime + " ms");
         
-        System.out.println(myTime);
     }
 
     private static long doWork() {
         
-        Instant queryStartTime = Instant.now();
-        
         List<Thread> threadList = new ArrayList<>();
+        
+        long avgOperationTime = 0;
         
         try{
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost/","root","L0la_Caesar");
@@ -71,14 +72,13 @@ public class SelfSubtract {
                 System.out.println(ex.getMessage());
         }
         
-            
-        Instant threadPreWorkStartTime = Instant.now();
-        
+                
         for(int i = 0; i < numThreads; i++){
             int threadNum = i+1;
             threadList.add(new Thread(new ParallelTask(numRowsPerThread, threadNum), "Thread" + threadNum));
         }
         
+        Instant start = Instant.now();
         
         for(int i = 0; i < numThreads; i++){
             threadList.get(i).start();
@@ -91,13 +91,13 @@ public class SelfSubtract {
                 System.out.println(ex.getMessage());
             }
         }
-                
-        Duration queryTime = Duration.between(queryStartTime, threadPreWorkStartTime);
-        Duration threadPreWorkTime = Duration.between(threadPreWorkStartTime, Instant.now());
         
-        System.out.println("\n\n\nTotal Query Time: " + queryTime + "\nTotal Thread PreWork Time: " + threadPreWorkTime + "\n"); 
+        for (int i = 0; i < operationTimes.size(); i++) {
+            avgOperationTime += operationTimes.get(i);
+        }
         
-        return(queryTime.toMillis());
+        
+        return(avgOperationTime/numThreads);
         
     }
     
@@ -116,31 +116,70 @@ public class SelfSubtract {
         public void run() {
             
             Instant threadStartTime = Instant.now();
-
+            Instant queryStartTime = Instant.now();
+            Instant operationStartTime = Instant.now();
+            Instant operationEndTime = Instant.now();
             
             System.out.println(Thread.currentThread().getName() + " started");
-
-            int operations = 0;
+            Connection con;
+            int count = 0;
             
-            int startRow = (threadNum - 1) * numRows;
-            int currentRow = startRow;          
-
-            for(int i = startRow; i < startRow + numRows; i++){
-                masterArr[currentRow] -= masterArr[currentRow];
-                currentRow += 1;
-                operations += 1;
-            }
+            try{
+                
+                queryStartTime = Instant.now();
+                
+                con = DriverManager.getConnection("jdbc:mysql://localhost/","root","L0la_Caesar");
+                
+                int startRow = (threadNum - 1) * numRows;
+                
+                
+                String query = query_base + startRow + ", " + numRows;
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
             
+                int currentRow = startRow;
+                
+                operationStartTime = Instant.now();
+                 
+                
+                while(rs.next()){
+                    
+                    masterArr[currentRow] -= masterArr[currentRow];
+                    currentRow += 1;
+                    count += 1;
+                }
+                
+                
+                operationEndTime = Instant.now();
+
+            }catch(SQLException ex){
+                System.out.println(ex.getMessage());
+            } 
             
             Duration totalThreadTime = Duration.between(threadStartTime, Instant.now());
+            Duration totalQueryTime = Duration.between(queryStartTime, operationStartTime);
+            Duration totalOperationTime = Duration.between(operationStartTime, operationEndTime);
             
             if(showDetails) { 
-                System.out.println("\n\n" + Thread.currentThread().getName().toUpperCase() + "\n" + "Total Operations: " + operations + "\n" + "Total Thread Time: " + totalThreadTime.toMillis() + " ms");
+                System.out.println("\n" + Thread.currentThread().getName().toUpperCase());
+                System.out.println("Total Operations: " + count);
+                System.out.println("Total Thread Time: " + totalThreadTime.toMillis() + " ms");
+                System.out.println("Total Query Time: " + totalQueryTime.toMillis() + " ms");
+                System.out.println("Total Operation Time: " + totalOperationTime.toMillis() + " ms");
+                System.out.println("Thread Start Time: " + DateTimeFormatter.ofPattern("hh:mm:ss.SSS").format(LocalDateTime.ofInstant(threadStartTime, ZoneOffset.UTC)));
+                System.out.println("Operation Start Time: " + DateTimeFormatter.ofPattern("hh:mm:ss.SSS").format(LocalDateTime.ofInstant(operationStartTime, ZoneOffset.UTC)));
+                System.out.println("Operation End Time: " + DateTimeFormatter.ofPattern("hh:mm:ss.SSS").format(LocalDateTime.ofInstant(operationEndTime, ZoneOffset.UTC)) + "\n\n"); 
             }
+            
+            else {
+                System.out.println("\n" + Thread.currentThread().getName().toUpperCase());
+                System.out.println("Total Operation Time: " + totalOperationTime.toMillis() + " ms");
+            }
+            
+            
+            operationTimes.add(totalOperationTime.toMillis());
+
             
         }
     }
 }
-
-
-      

@@ -1,0 +1,98 @@
+cd C:\Users\shoum\Documents\NetBeansProjects\mavenproject1; "JAVA_HOME=C:\\Program Files\\Java\\jdk-17.0.2" cmd /c "\"C:\\Program Files\\NetBeans-13\\netbeans\\java\\maven\\bin\\mvn.cmd\" -Dexec.vmArgs= \"-Dexec.args=${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}\" -Dexec.appArgs= -Dexec.mainClass=com.mycompany.mavenproject1.SelfSubtract \"-Dexec.executable=C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe\" \"-Dmaven.ext.class.path=C:\\Program Files\\NetBeans-13\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar\" -Dfile.encoding=UTF-8 org.codehaus.mojo:exec-maven-plugin:3.0.0:exec"
+Running NetBeans Compile On Save execution. Phase execution is skipped and output directories of dependency projects (with Compile on Save turned on) will be used instead of their jar artifacts.
+Scanning for projects...
+
+--------------------< com.mycompany:mavenproject1 >---------------------
+Building mavenproject1 1.0-SNAPSHOT
+--------------------------------[ jar ]---------------------------------
+
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ mavenproject1 ---
+Thread6 started
+Thread11 started
+Thread8 started
+Thread9 started
+Thread15 started
+Thread4 started
+Thread13 started
+Thread14 started
+Thread10 started
+Thread7 started
+Thread18 started
+Thread12 started
+Thread19 started
+Thread17 started
+Thread16 started
+Thread3 started
+Thread1 started
+Thread2 started
+Thread5 started
+Thread20 started
+
+THREAD3
+Total Operation Time: 18 ms
+
+THREAD1
+Total Operation Time: 21 ms
+
+THREAD2
+Total Operation Time: 17 ms
+
+THREAD4
+Total Operation Time: 12 ms
+
+THREAD8
+Total Operation Time: 12 ms
+
+THREAD5
+Total Operation Time: 15 ms
+
+THREAD6
+Total Operation Time: 10 ms
+
+THREAD11
+Total Operation Time: 12 ms
+
+THREAD10
+Total Operation Time: 10 ms
+
+THREAD7
+Total Operation Time: 10 ms
+
+THREAD9
+Total Operation Time: 9 ms
+
+THREAD15
+Total Operation Time: 11 ms
+
+THREAD17
+Total Operation Time: 7 ms
+
+THREAD12
+Total Operation Time: 7 ms
+
+THREAD18
+Total Operation Time: 8 ms
+
+THREAD13
+Total Operation Time: 11 ms
+
+THREAD14
+Total Operation Time: 7 ms
+
+THREAD16
+Total Operation Time: 7 ms
+
+THREAD19
+Total Operation Time: 0 ms
+
+THREAD20
+Total Operation Time: 0 ms
+
+
+Average Operation Time for All Threads: 10 ms
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  12.811 s
+Finished at: 2022-04-18T20:04:28-04:00
+------------------------------------------------------------------------

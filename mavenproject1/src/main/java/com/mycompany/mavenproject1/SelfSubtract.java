@@ -41,7 +41,7 @@ public class SelfSubtract {
         // Param 2: Number of Threads
         // Param 3: Shows Details for Debugging
         
-        SelfSubtract selfsubtract = new SelfSubtract(5000000,8, false);
+        SelfSubtract selfsubtract = new SelfSubtract(5000000, 45, false);
         
         long avgOperationTime = doWork();
         

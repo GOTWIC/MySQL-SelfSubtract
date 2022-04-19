@@ -1,0 +1,30 @@
+cd C:\Users\shoum\Documents\NetBeansProjects\mavenproject1; "JAVA_HOME=C:\\Program Files\\Java\\jdk-17.0.2" cmd /c "\"C:\\Program Files\\NetBeans-13\\netbeans\\java\\maven\\bin\\mvn.cmd\" -Dexec.vmArgs= \"-Dexec.args=${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}\" -Dexec.appArgs= -Dexec.mainClass=com.mycompany.mavenproject1.SelfSubtract \"-Dexec.executable=C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe\" \"-Dmaven.ext.class.path=C:\\Program Files\\NetBeans-13\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar\" -Dfile.encoding=UTF-8 org.codehaus.mojo:exec-maven-plugin:3.0.0:exec"
+Running NetBeans Compile On Save execution. Phase execution is skipped and output directories of dependency projects (with Compile on Save turned on) will be used instead of their jar artifacts.
+Scanning for projects...
+
+--------------------< com.mycompany:mavenproject1 >---------------------
+Building mavenproject1 1.0-SNAPSHOT
+--------------------------------[ jar ]---------------------------------
+
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ mavenproject1 ---
+Thread3 started
+Thread1 started
+Thread2 started
+
+THREAD1
+Total Operation Time: 72 ms
+
+THREAD2
+Total Operation Time: 60 ms
+
+THREAD3
+Total Operation Time: 52 ms
+
+
+Average Operation Time for All Threads: 61 ms
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  12.321 s
+Finished at: 2022-04-18T19:51:08-04:00
+------------------------------------------------------------------------

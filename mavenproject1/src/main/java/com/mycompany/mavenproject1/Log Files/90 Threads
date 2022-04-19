@@ -1,0 +1,378 @@
+cd C:\Users\shoum\Documents\NetBeansProjects\mavenproject1; "JAVA_HOME=C:\\Program Files\\Java\\jdk-17.0.2" cmd /c "\"C:\\Program Files\\NetBeans-13\\netbeans\\java\\maven\\bin\\mvn.cmd\" -Dexec.vmArgs= \"-Dexec.args=${exec.vmArgs} -classpath %classpath ${exec.mainClass} ${exec.appArgs}\" -Dexec.appArgs= -Dexec.mainClass=com.mycompany.mavenproject1.SelfSubtract \"-Dexec.executable=C:\\Program Files\\Java\\jdk-17.0.2\\bin\\java.exe\" \"-Dmaven.ext.class.path=C:\\Program Files\\NetBeans-13\\netbeans\\java\\maven-nblib\\netbeans-eventspy.jar\" -Dfile.encoding=UTF-8 org.codehaus.mojo:exec-maven-plugin:3.0.0:exec"
+Running NetBeans Compile On Save execution. Phase execution is skipped and output directories of dependency projects (with Compile on Save turned on) will be used instead of their jar artifacts.
+Scanning for projects...
+
+--------------------< com.mycompany:mavenproject1 >---------------------
+Building mavenproject1 1.0-SNAPSHOT
+--------------------------------[ jar ]---------------------------------
+
+--- exec-maven-plugin:3.0.0:exec (default-cli) @ mavenproject1 ---
+Thread7 started
+Thread10 started
+Thread1 started
+Thread4 started
+Thread8 started
+Thread9 started
+Thread5 started
+Thread14 started
+Thread15 started
+Thread11 started
+Thread12 started
+Thread13 started
+Thread16 started
+Thread17 started
+Thread19 started
+Thread18 started
+Thread20 started
+Thread21 started
+Thread22 started
+Thread2 started
+Thread3 started
+Thread23 started
+Thread24 started
+Thread25 started
+Thread6 started
+Thread26 started
+Thread27 started
+Thread28 started
+Thread29 started
+Thread30 started
+Thread31 started
+Thread32 started
+Thread33 started
+Thread34 started
+Thread35 started
+Thread36 started
+Thread37 started
+Thread38 started
+Thread39 started
+Thread40 started
+Thread41 started
+Thread42 started
+Thread43 started
+Thread45 started
+Thread44 started
+
+THREAD3
+
+THREAD2
+
+THREAD11
+Total Operation Time: 17 ms
+Total Operation Time: 57 ms
+Total Operation Time: 15 ms
+
+THREAD15
+Total Operation Time: 8 ms
+Thread47 started
+Thread48 started
+Thread51 started
+Thread55 started
+Thread56 started
+Thread52 started
+Thread46 started
+Thread50 started
+Thread49 started
+Thread53 started
+Thread54 started
+Thread57 started
+Thread61 started
+Thread62 started
+Thread58 started
+Thread66 started
+Thread69 started
+
+THREAD33
+Total Operation Time: 3 ms
+Thread65 started
+Thread73 started
+Thread74 started
+Thread70 started
+Thread82 started
+Thread81 started
+Thread77 started
+Thread78 started
+Thread86 started
+Thread85 started
+Thread90 started
+Thread89 started
+Thread59 started
+Thread60 started
+
+THREAD4
+Total Operation Time: 2 ms
+
+THREAD8
+Total Operation Time: 14 ms
+
+THREAD26
+Total Operation Time: 0 ms
+Thread63 started
+Thread64 started
+Thread67 started
+Thread68 started
+Thread71 started
+Thread72 started
+Thread75 started
+Thread76 started
+Thread79 started
+Thread80 started
+Thread83 started
+Thread87 started
+Thread88 started
+Thread84 started
+
+THREAD10
+Total Operation Time: 3 ms
+
+THREAD1
+Total Operation Time: 4 ms
+
+THREAD29
+Total Operation Time: 4 ms
+
+THREAD6
+Total Operation Time: 3 ms
+
+THREAD39
+Total Operation Time: 3 ms
+
+THREAD20
+Total Operation Time: 2 ms
+
+THREAD43
+Total Operation Time: 2 ms
+
+THREAD9
+Total Operation Time: 3 ms
+
+THREAD37
+Total Operation Time: 3 ms
+
+THREAD32
+Total Operation Time: 2 ms
+
+THREAD7
+Total Operation Time: 3 ms
+
+THREAD17
+Total Operation Time: 2 ms
+
+THREAD14
+Total Operation Time: 3 ms
+
+THREAD13
+Total Operation Time: 0 ms
+
+THREAD23
+Total Operation Time: 3 ms
+
+THREAD5
+Total Operation Time: 0 ms
+
+THREAD24
+Total Operation Time: 2 ms
+
+THREAD41
+Total Operation Time: 3 ms
+
+THREAD12
+Total Operation Time: 2 ms
+
+THREAD34
+Total Operation Time: 3 ms
+
+THREAD49
+Total Operation Time: 3 ms
+
+THREAD35
+Total Operation Time: 2 ms
+
+THREAD50
+Total Operation Time: 0 ms
+
+THREAD16
+Total Operation Time: 2 ms
+
+THREAD47
+Total Operation Time: 2 ms
+
+THREAD57
+Total Operation Time: 2 ms
+
+THREAD52
+Total Operation Time: 3 ms
+
+THREAD65
+Total Operation Time: 2 ms
+
+THREAD18
+Total Operation Time: 3 ms
+
+THREAD19
+Total Operation Time: 3 ms
+
+THREAD45
+Total Operation Time: 2 ms
+
+THREAD22
+Total Operation Time: 2 ms
+
+THREAD83
+Total Operation Time: 2 ms
+
+THREAD21
+Total Operation Time: 3 ms
+
+THREAD88
+Total Operation Time: 2 ms
+
+THREAD25
+Total Operation Time: 3 ms
+
+THREAD70
+Total Operation Time: 2 ms
+
+THREAD68
+Total Operation Time: 8 ms
+
+THREAD86
+Total Operation Time: 3 ms
+
+THREAD27
+Total Operation Time: 3 ms
+
+THREAD60
+Total Operation Time: 2 ms
+
+THREAD63
+Total Operation Time: 2 ms
+
+THREAD66
+Total Operation Time: 3 ms
+
+THREAD80
+Total Operation Time: 3 ms
+
+THREAD30
+Total Operation Time: 2 ms
+
+THREAD36
+Total Operation Time: 0 ms
+
+THREAD28
+Total Operation Time: 3 ms
+
+THREAD67
+Total Operation Time: 3 ms
+
+THREAD38
+Total Operation Time: 2 ms
+
+THREAD81
+Total Operation Time: 3 ms
+
+THREAD56
+Total Operation Time: 2 ms
+
+THREAD53
+Total Operation Time: 3 ms
+
+THREAD62
+Total Operation Time: 1 ms
+
+THREAD79
+Total Operation Time: 8 ms
+
+THREAD40
+Total Operation Time: 7 ms
+
+THREAD75
+Total Operation Time: 3 ms
+
+THREAD31
+Total Operation Time: 2 ms
+
+THREAD54
+Total Operation Time: 3 ms
+
+THREAD90
+Total Operation Time: 3 ms
+
+THREAD78
+Total Operation Time: 3 ms
+
+THREAD73
+Total Operation Time: 3 ms
+
+THREAD42
+Total Operation Time: 2 ms
+
+THREAD84
+Total Operation Time: 3 ms
+
+THREAD44
+Total Operation Time: 3 ms
+
+THREAD46
+Total Operation Time: 8 ms
+
+THREAD58
+Total Operation Time: 3 ms
+
+THREAD72
+Total Operation Time: 8 ms
+
+THREAD61
+Total Operation Time: 3 ms
+
+THREAD74
+Total Operation Time: 2 ms
+
+THREAD77
+Total Operation Time: 2 ms
+
+THREAD59
+Total Operation Time: 3 ms
+
+THREAD82
+Total Operation Time: 2 ms
+
+THREAD69
+Total Operation Time: 3 ms
+
+THREAD48
+Total Operation Time: 2 ms
+
+THREAD51
+Total Operation Time: 1 ms
+
+THREAD55
+Total Operation Time: 0 ms
+
+THREAD64
+Total Operation Time: 2 ms
+
+THREAD71
+Total Operation Time: 2 ms
+
+THREAD87
+Total Operation Time: 1 ms
+
+THREAD85
+Total Operation Time: 2 ms
+
+THREAD76
+Total Operation Time: 1 ms
+
+THREAD89
+Total Operation Time: 2 ms
+
+
+Average Operation Time for All Threads: 3 ms
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  23.576 s
+Finished at: 2022-04-18T20:05:13-04:00
+------------------------------------------------------------------------
